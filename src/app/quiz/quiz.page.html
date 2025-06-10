@@ -10,6 +10,9 @@
       <ion-card-title>
         Pergunta {{ currentQuestionIndex + 1 }} de {{ questions.length }}
       </ion-card-title>
+      <ion-card-title>
+        Tema: {{questions[currentQuestionIndex].theme}}
+      </ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <p>{{ questions[currentQuestionIndex].text }}</p>
