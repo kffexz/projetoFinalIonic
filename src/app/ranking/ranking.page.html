@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ranking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list *ngIf="scores.length > 0; else noData">
+    <ion-item *ngFor="let s of scores; index as i">
+      <ion-label>
+        <h2>{{ i + 1 }}º - {{ s.name }}</h2>
+        <p>Pontuação: {{ s.score }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #noData>
+    <p class="ion-text-center">Nenhum jogador no ranking ainda.</p>
+  </ng-template>
+
+  <ion-button expand="full" color="danger" (click)="clearRanking()">
+    Limpar Ranking
+  </ion-button>
+
+  <ion-button expand="full" (click)="backToHome()">Voltar ao Início</ion-button>
+</ion-content>
